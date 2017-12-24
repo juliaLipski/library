@@ -1,0 +1,80 @@
+<div class="form">
+  <h3>Please, input book data</h3>
+  <div>
+    <input type="text" placeholder="search book &#128270;" ng-keydown="$event.which === 13 && $ctrl.getBook()" ng-model="$ctrl.data">
+    <button class="blue" ng-click="$ctrl.getBook()">search</button>
+  </div>
+  <div ng-show="$ctrl.showBook" class="flex">
+    <div class="info">
+      <h2>About book:</h2>
+      <p>ISBN :
+        <span>{{$ctrl.ISBN}}</span>
+      </p>
+      <p>Title:
+        <span>{{$ctrl.title}}</span>
+      </p>
+      <p>Author:
+        <span ng-repeat="(key,value) in $ctrl.author">{{value}} ,</span>
+      </p>
+      <p>Genre:
+        <span ng-repeat="(key,value) in $ctrl.genre">{{value}} ,</span>
+      </p>
+      <p>Price: {{$ctrl.price}}</p>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>copyId</th>
+          <th>status</th>
+          <th>lastBorrower</th>
+          <th>borroweredDate</th>
+          <td class="eddit"> &#9997 change ststus</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="copy in $ctrl.copies track by $index">
+          <td>{{copy._id}}</td>
+          <td>{{copy.status}}</td>
+          <td>{{copy.lastBorrower}}</td>
+          <td>{{copy.borroweredDate | date: "dd/MM/y"}}</td>
+          <td>
+            <button class="eddit" ng-click="$ctrl.showChangeStatus($index)">change ststus</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <h3>delete all books copies from library</h3>
+      <button class="delete" ng-click="$ctrl.showMessDlAllCopies()">delete</button>
+    </div>
+  </div>
+
+  <div ng-show="$ctrl.messDelete" class="noBody">
+    <div class="message">
+      <p>Are you sure</p>
+      <button ng-click="$ctrl.deleteAllCopies()">delete all copies</button>
+      <button ng-click="$ctrl.close()">close</button>
+    </div>
+  </div>
+  <div ng-show="$ctrl.messNotExist" class="noBody">
+    <div class="message">
+      <p>book not exist</p>
+      <button ng-click="$ctrl.close()">close</button>
+    </div>
+  </div>
+</div>
+<div ng-show="$ctrl.messSucses" class="noBody">
+  <div class="message sucsses">
+    <p>success</p>
+    <button ng-click="$ctrl.closeSuc()">close</button>
+  </div>
+</div>
+<div ng-show="$ctrl.modalChangeStatus" class="noBody">
+  <div class="message">
+    <h3>change status?</h3>
+    <input class="w200" name="status" reqired type="text" placeholder="new status" ng-model="$ctrl.newStatus">
+    <button ng-click="$ctrl.setNewStatus()">ok</button>
+    <button ng-click="$ctrl.close()">close</button>
+  </div>
+</div>
+</div>

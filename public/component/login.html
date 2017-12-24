@@ -1,0 +1,13 @@
+<div>
+  <label for="name"> Name:</label>
+  <input name="name" reqired type="text" placeholder="username" ng-model="$ctrl.name">
+  <label for="password"> password:</label>
+  <input name="password" reqired type="text" placeholder="password" ng-model="$ctrl.password">
+  <button ng-click="$ctrl.login()">login</button>
+</div>
+<div ng-show="$ctrl.messNoLogin" class="noBody">
+  <div class="message">
+    <p>data is not correct</p>
+    <button ng-click="$ctrl.close()">close</button>
+  </div>
+</div>

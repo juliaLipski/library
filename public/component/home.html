@@ -1,0 +1,27 @@
+<div class="flex add">
+  <h2 class=""> Welcome to The Library</h2>
+  <table class="table scrol">
+    <thead>
+      <tr>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="book in $ctrl.books">
+        <td>{{book.ISBN}}</td>
+        <td>{{book.title}}</td>
+        <td>
+          <span ng-repeat="(key,value) in book.author">{{value}} ,</span>
+        </td>
+        <td>
+          <span ng-repeat="(key,value) in book.genre">{{value}} , </span>
+        </td>
+        <td>{{book.price}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

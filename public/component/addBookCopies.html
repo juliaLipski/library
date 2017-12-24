@@ -1,0 +1,17 @@
+<div>
+  <input type="text" type="number" placeholder="how many copes" ng-model="$ctrl.quanOfCopy" ng-maxlength=5>
+  <button ng-click="$ctrl.showMess()">add</button>
+</div>
+<div ng-show="$ctrl.showMessAdd" class="noBody">
+  <div class="message">
+    <p>add copy ?</p>
+    <button ng-click="$ctrl.addBookCopies()"> add </button>
+    <button ng-click="$ctrl.exit()"> exit </button>
+  </div>
+</div>
+<div ng-show="$ctrl.messOk" class="noBody">
+  <div class="message sucsses">
+    <p>copy is saved</p>
+    <button ng-click="$ctrl.close()">close</button>
+  </div>
+</div>

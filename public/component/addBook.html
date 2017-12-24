@@ -1,0 +1,35 @@
+<div>
+  <form name="" class="add">
+    <label for="ISBN">ISBN:</label>
+    <input name="ISBN" reqired type="text" placeholder="ISBN" ng-model="$ctrl.ISBN" ng-maxlength=5 ng-pattern="[a-zA-Z]">
+    <label for="title">Title:</label>
+    <input name="title" reqired type="text" placeholder="title" ng-model="$ctrl.title">
+    <label for="author">Author:</label>
+    <input name="author" type="text" reqired placeholder="author" ng-model="$ctrl.author">
+    <label for="genre"> Genre:</label>
+    <input name="genre" reqired type="text" placeholder="genre" ng-model="$ctrl.genre">
+    <label for="price"> Price:</label>
+    <input name="price" reqired type="text" placeholder="price" ng-model="$ctrl.price">
+    <button ng-click="$ctrl.showMessFunc()">add Book</button>
+  </form>
+  <add-copies isbn="$ctrl.ISBN"></add-copies>
+</div>
+<div ng-show="$ctrl.showMess" class="noBody">
+  <div class="message">
+    <p> Add book in library</p>
+    <button ng-click="$ctrl.save()">save</button>
+    <button ng-click="$ctrl.close()">exit</button>
+  </div>
+</div>
+<div ng-show="$ctrl.messOk" class="noBody">
+  <div class="message sucsses">
+    <p>Save is ok</p>
+    <button ng-click="$ctrl.close()">close</button>
+  </div>
+</div>
+<div ng-show="$ctrl.messInput" class="noBody">
+  <div class="message">
+    <p>Please, input data</p>
+    <button ng-click="$ctrl.close()">close</button>
+  </div>
+</div>

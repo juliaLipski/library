@@ -1,0 +1,47 @@
+ <div class="cont">
+ <div>
+    <label for="addBook">input Id:</label>
+    <input name="addBook" class="w300" type="text" ng-model="$ctrl.bookId" ng-keydown="$event.which === 13 && $ctrl.showMessAdd()" placeholder="book id">
+    <button ng-click="$ctrl.showMessAdd()">add Book</button>
+  </div>
+  <table class="table w300">
+    <thead>
+      <tr>
+        <th>Borrowers books</th>
+        <th class="delete w100">delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  ng-repeat="brBook in $ctrl.brbooks track by $index">
+        <td>{{brBook}}</td>
+        <td><button class="delete" ng-click="$ctrl.showMessDlBook($index)">delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+ </div>
+  <div ng-show="$ctrl.messAdd" class="noBody">
+    <div class="message qu">
+      <p>Are you sure</p>
+      <button ng-click="$ctrl.addBook()">add book</button>
+      <button ng-click="$ctrl.close()">close</button>
+    </div>
+  </div>
+   <div ng-show="$ctrl.messDelete" class="noBody">
+    <div class="message qu">
+      <p>Are you sure</p>
+      <button ng-click="$ctrl.deleteBook()">delete book</button>
+      <button ng-click="$ctrl.close()">close</button>
+    </div>
+  </div>
+  <div ng-show="$ctrl.messSucses" class="noBody">
+    <div class="message sucsses">
+      <p>success</p>
+      <button ng-click="$ctrl.close()">close</button>
+    </div>
+  </div>
+<div ng-show="$ctrl.messNotPossibly" class="noBody">
+    <div class="message">
+      <p>Not possibly</p>
+      <button ng-click="$ctrl.close()">close</button>
+    </div>
+  </div>

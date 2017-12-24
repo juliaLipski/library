@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aclonica">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+  <script src="//npmcdn.com/angular-ui-router@1.0.0-alpha.4/release/angular-ui-router.js"></script>
+  <script src="/javascripts/config.js"></script>
+  <script src="/javascripts/addBook.js"></script>
+  <script src="/javascripts/addBookCopies.js"></script>
+  <script src="/javascripts/addBorrower.js"></script>
+  <script src="/javascripts/changeBook.js"></script>
+  <script src="/javascripts/changeBorrower.js"></script>
+  <script src="/javascripts/edditBook.js"></script>
+  <script src="/javascripts/home.js"></script>
+  <script src="/javascripts/info.js"></script>
+  <script src="/javascripts/login.js"></script>
+  <script src="/javascripts/changeBorrowersBooks.js"></script>
+</head>
+
+<body ng-app="angularModule">
+  <div class="header">
+    <div class="img"></div><a class="logut">Logout</a>
+    <div class="menu">
+      <ul class="ul">
+        <li><a ui-sref="home" ui-sref-active="active">&#8962; Home</a></li>
+        <li><a>Borrowers &#9660;</a>
+          <ul>
+            <li><a ui-sref="addBorrower" ui-sref-active="active">&#9998; add Borrower</a></li>
+            <li> <a ui-sref="changeBorrower" ui-sref-active="active">change Borrower</a></li>
+          </ul>
+        </li>
+        <li><a>Books &#9660;</a>
+          <ul>
+            <li><a ui-sref="addBook" ui-sref-active="active">&#9998; add new book</a></li>
+            <li><a ui-sref="changeBook" ui-sref-active="active">change book</a></li>
+          </ul>
+        </li>
+        <li><a ui-sref="info" ui-sref-active="active">Reports</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap">
+    <div ui-view></div>
+  </div>
+  <div class="futt"> <span>The Library</span></div>
+</body>
+</html>

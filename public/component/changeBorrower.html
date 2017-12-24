@@ -1,0 +1,65 @@
+<div class="form">
+  <h3>Please input borrovere data:</h3>
+  <div>
+    <label for="search"></label>
+    <input name="search" id="borrower" type="text" placeholder="search borrower" ng-keydown="$event.which === 13 && $ctrl.getborrower()"
+      ng-model="$ctrl.data">
+    <button ng-click="$ctrl.getborrower()" class="blue">search</button>
+  </div>
+  <div ng-show="$ctrl.showBorrower">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>firstname</th>
+          <th>lastname</th>
+          <th>emal</th>
+          <th>&#9742; phone</th>
+          <th>address</th>
+          <th class="eddit"> &#9997 eddit</th>
+          <th class="delete">delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{$ctrl.id}}</td>
+          <td><input class="w100" type="text" value="{{$ctrl.firstname}}" ng-model="$ctrl.firstname"></td>
+          <td><input class="w100" type="text" value="{{$ctrl.lastname}}" ng-model="$ctrl.lastname"></td>
+          <td><input class="w100" type="text" value="{{$ctrl.email}}" ng-model="$ctrl.email"></td>
+          <td><input class="w100" type="text" value="{{$ctrl.phone}}" ng-model="$ctrl.phone"></td>
+          <td><input class="w100" type="text" value="{{$ctrl.address}}" ng-model="$ctrl.address"></td>
+          <td><button class="eddit" ng-click="$ctrl.showMessEd()"> &#9997 eddit</button></td>
+          <td><button class="delete" ng-click="$ctrl.showMessDl()">delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pic"></div>
+    <boorowered-book brbooks="$ctrl.brBooks" id="$ctrl.id"></boorowered-book>
+  </div>
+</div>
+<div ng-show="$ctrl.showMessDetete" class="noBody">
+  <div class="message">
+    <p>Are you sure</p>
+    <button ng-click="$ctrl.deleteBorrower()">delete borrower</button>
+    <button ng-click="$ctrl.close()">close</button>
+  </div>
+</div>
+<div ng-show="$ctrl.showMessEddit" class="noBody">
+  <div class="message qu">
+    <p>Are you sure</p>
+    <button ng-click="$ctrl.eddit()">eddit borrower</button>
+    <button ng-click="$ctrl.close()">close</button>
+  </div>
+</div>
+<div ng-show="$ctrl.messNotExist" class="noBody">
+  <div class="message">
+    <p>borrower not exist</p>
+    <button ng-click="$ctrl.close()">close</button>
+  </div>
+</div>
+<div ng-show="$ctrl.messSucses" class="noBody">
+  <div class="message sucsses">
+    <p>success</p>
+    <button ng-click="$ctrl.closeSuc()">close</button>
+  </div>
+</div>

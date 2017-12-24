@@ -1,0 +1,98 @@
+<div class="form">
+  <h1>Reports from library:</h1>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            <button class="w300 bl" ng-click="$ctrl.showborroweredBooks()">Borrowered books:</button>
+          </th>
+          <th>
+            <button class="w300 bl" ng-click="$ctrl.showlostBooks()">Lost books</button>
+          </th>
+          <th>
+            <button class="w300 bl" ng-click="$ctrl.activeBorrovers()">Active borrowered</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{$ctrl.brBooks}}</td>
+          <td>{{$ctrl.lBooks}}</td>
+          <td>{{$ctrl.actBorr}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div ng-show="$ctrl.showBorrowers">
+    <h3 class="center">Active borrowers:</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Email</th>
+          <th>&#9742; Phone</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="borrover in $ctrl.dataActBorr">
+          <td>{{borrover._id}}</td>
+          <td>{{borrover.name.firstname}}</td>
+          <td>{{borrover.name.lastname}}</td>
+          <td>{{borrover.email}}</td>
+          <td>{{borrover.phone}}</td>
+          <td>{{borrover.address}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div ng-show="$ctrl.borroweredBooks">
+    <h3 class="center">Borrowered books:</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ISBN</th>
+          <th>CopyId</th>
+          <th>Status</th>
+          <th>Last Borrower</th>
+          <th>Borrowered Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="copy in $ctrl.data">
+          <td>{{copy.ISBN}}</td>
+          <td>{{copy.copies._id}}</td>
+          <td>{{copy.copies.status}}</td>
+          <td>{{copy.copies.lastBorrower}}</td>
+          <td>{{copy.copies.borroweredDate | date: "dd/MM/y"}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div ng-show="$ctrl.lostBooks">
+    <h3 class="center">Lost books:</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ISBN</th>
+          <th>Copy Id</th>
+          <th>Status</th>
+          <th>Last Borrower</th>
+          <th>Borrowered Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="copy in $ctrl.dataLost">
+          <td>{{copy.ISBN}}</td>
+          <td>{{copy.copies._id}}</td>
+          <td>{{copy.copies.status}}</td>
+          <td>{{copy.copies.lastBorrower}}</td>
+          <td>{{copy.copies.borroweredDate | date: "dd/MM/y"}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

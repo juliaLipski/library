@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    div.header
+        div.img
+        div.menu
+            ul(class="ul")
+                li
+                    a(ui-sref="home", ui-sref-active="active") &#8962; Home
+                li
+                    a Borrowers &#9660;
+                    ul
+                        li
+                            a(ui-sref="addBorrower" ui-sref-active="active") &#9998; add Borrower
+                        li 
+                            a(ui-sref="changeBorrower" ui-sref-active="active") change Borrower
+                li
+                    a Books &#9660;
+                    ul
+                        li
+                            a(ui-sref="addBook", ui-sref-active="active") &#9998; add new book
+                        li
+                            a(ui-sref="changeBook" ui-sref-active="active") change book
+                li
+                    a(ui-sref="info", ui-sref-active="active") Reports
+    div.wrap
+        div(ui-view)
+    div.futt 
+        span The Library

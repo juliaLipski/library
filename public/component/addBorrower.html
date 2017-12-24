@@ -1,0 +1,32 @@
+<div class="add">
+  <label for="firstname">First name :</label>
+  <input name="firstname" type="text" placeholder="firstname" ng-model="$ctrl.firstname" reqired>
+  <label for="lastname">Last name :</label>
+  <input name="lastname" type="text" placeholder="lastname" ng-model="$ctrl.lastname" reqired>
+  <label for="phone">&#9742; Phone:</label>
+  <input name="phone" type="text" placeholder="phone" ng-model="$ctrl.phone" reqired>
+  <label for="address"> Address :</label>
+  <input name="address" type="text" placeholder="address" ng-model="$ctrl.address" reqired>
+  <label for="email"> Email :</label>
+  <input name="email" type="text" placeholder="email" ng-model="$ctrl.email">
+  <button ng-click="$ctrl.getSaveMess()">add borrower</button>
+</div>
+<div ng-show="$ctrl.saveMess" class="noBody">
+  <div class="message">
+    <p>Save borrower</p>
+    <button ng-click="$ctrl.addBorrower()">save</button>
+    <button ng-click="$ctrl.exit()">exit</button>
+  </div>
+</div>
+<div ng-show="$ctrl.messOk" class="noBody">
+  <div class="message sucsses">
+    <p>Save is ok</p>
+    <button ng-click="$ctrl.close()">close</button>
+  </div>
+</div>
+<div ng-show="$ctrl.messInput" class="noBody">
+  <div class="message">
+    <p>Please, input data</p>
+    <button ng-click="$ctrl.exit()">close</button>
+  </div>
+</div>

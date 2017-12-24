@@ -1,0 +1,35 @@
+<div class="form">
+    <div>
+        <input id="borrower" type="text" placeholder="search borrower" ng-model="$ctrl.data">
+        <button ng-click="$ctrl.getborrower()" class="blue">search</button>
+    </div>
+    <tbody>
+        <tr ng-repeat="borrower in $ctrl.borrowers">
+            <td>{{borrower.id}}</td>
+            <td>{{borrower.name.firstname}}</td>
+            <td>{{borrower.name.lastname}}</td>
+            <td>{{borrower.email}}</td>
+            <td>{{borrower.phone}}</td>
+            <td>{{borrower.address}}</td>
+            <td class="eddit"> &#9997 eddit</td>
+            <td class="delete">delete</td>
+        </tr>
+    </tbody>
+    </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>brBooks</th>
+                <th class="eddit"> &#9997 eddit</th>
+                <th class="delete">delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="brBook in $ctrl.brBooks">
+                <td>{{brBook}}</td>
+                <td class="eddit"> &#9997 eddit</td>
+                <td class="delete">delete</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

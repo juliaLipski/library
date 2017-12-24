@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aclonica")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js")
+    script(src="//npmcdn.com/angular-ui-router@1.0.0-alpha.4/release/angular-ui-router.js")
+    script(src="/javascripts/config.js")
+    script(src="/javascripts/addBook.js")
+    script(src="/javascripts/addBookCopies.js")
+    script(src="/javascripts/addBorrower.js")
+    script(src="/javascripts/changeBook.js")
+    script(src="/javascripts/changeBorrower.js")
+    script(src="/javascripts/home.js")
+    script(src="/javascripts/info.js")
+    script(src="/javascripts/changeBorrowersBooks.js")
+  body(ng-app="angularModule")
+    block content
